@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* This ensures the whole browser window uses the dark theme */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #18181b; /* This is zinc-900 */
+  scroll-behavior: smooth;
+}
+.about-3d-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #e5e7eb;
+  text-transform: capitalize;
+
+  /* 3D depth */
+  text-shadow:
+    1px 1px 0 #2563eb,
+    2px 2px 0 #1e40af,
+    3px 3px 0 #1e3a8a,
+    4px 4px 10px rgba(37, 99, 235, 0.4);
+
+  transform-style: preserve-3d;
+  animation: float3d 4s ease-in-out infinite;
+}
+
+/* subtle floating animation */
+@keyframes float3d {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotateX(6deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+}
